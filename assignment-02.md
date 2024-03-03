@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:**__Noah Allgaier_______________________
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -12,54 +12,55 @@ and push to your github repository.
 
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
-.  
-.  
-.  
-.  
-.  
+.  a = 2
+.  b = 3
+.  f(n) = 1
+.  Because log_3 2 > 0, 
+.  O(n^{log_3 2})
   * $W(n)=5W(n/4)+n$
-.  
-.  
-.  
-.  
-.  
+.  a = 5
+.  b = 4 
+.  f(n) = n
+.  Because log_4 5 > 1,
+.  O(n^{log_4 5}log n)
   * $W(n)=7W(n/7)+n$
-.  
-.  
-.  
-.  
-.  
+.  a = 7
+.  b = 7
+.  f(n) = n
+.  Because log_7 7 = 1,
+.  O(n^{n*(log n)})
   * $W(n)=9W(n/3)+n^2$
-.  
-.  
-.  
-.  
-.  
+.  a = 9
+.  b = 3 
+.  f(n) = n^2
+.  Because log_3 9 > 2 
+.  O(n^2)
   * $W(n)=8W(n/2)+n^3$
-.  
-.  
-.  
-.  
-.  
+.  a = 8
+.  b = 2
+.  f(n) = n^3
+.  Because log_2 8 > 3
+.  O(n^3)
   * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
-.  
-.  
-.  
-.  
+.  a = 49 
+.  b = 25
+.  f(n) = n^{3/2}*log n
+.  Because log_25 49 > 3/2
+.  O(n^(3/2)*log n)
   * $W(n)=W(n-1)+2$
-.  
+.  W(1)
 .  
 .  
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
+.  W(n)=Θ(n+(n^c))=Θ(n^c)
 .  
 .  
 .  
 .  
   * $W(n)=W(\sqrt{n})+1$
+  W(n)=Θ(log log n)
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
@@ -79,6 +80,13 @@ and push to your github repository.
 
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
+    
+    The asymptotic runing time is:
+    A = O(n^(log_2 5))
+    B = O(n)
+    C = O(n^2)
+
+    I would choose B because it is the most efficient.
 
 
 3. Now that you have some practice solving recurrences, let's work on
@@ -93,6 +101,7 @@ and push to your github repository.
   subquadratic time. Then test the empirical running times across a
   variety of inputs in `test_main.py` to test whether your code scales in the manner
   described by the asymptotic runtime. Please refer to Recitation 3 for some basic implementations, and Eqs (7) and (8) in the slides https://github.com/allan-tulane/cmps2200-slides/blob/main/module-02-recurrences/recurrences-integer-multiplication.ipynb
+ 
  
  
 
